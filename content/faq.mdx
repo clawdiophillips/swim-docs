@@ -1,0 +1,133 @@
+---
+title: FAQ & Troubleshooting
+description: Common questions and problems with SwimAI.
+---
+
+import { Callout } from 'nextra/components'
+
+# FAQ & Troubleshooting
+
+---
+
+## General Questions
+
+### What browsers does SwimAI support?
+
+SwimAI works in all modern browsers. We recommend **Chrome** or **Edge** for the best video performance. Firefox and Safari are supported but may have slightly slower video scrubbing on large files.
+
+### Does SwimAI work offline?
+
+No — SwimAI is a web-based platform and requires an internet connection. Your videos are stored in the cloud, so you can access them from any device.
+
+### Can I use SwimAI on my phone or tablet?
+
+Yes. SwimAI is responsive and works on mobile browsers. However, annotation is easier on a laptop or desktop where you have a keyboard for shortcuts. On mobile, all marker actions are available via touch.
+
+### How many videos can I store?
+
+Storage limits depend on your plan. Check **Settings → Billing** to see your current usage and limits.
+
+### Is my video footage private?
+
+Yes. Your videos are only visible to you and team members you invite. Shared links give view-only access to specific videos and expire after 30 days by default.
+
+---
+
+## Uploading
+
+### My upload is stuck at 0%
+
+- Check your internet connection — uploads require a stable connection
+- Try a different browser or disable browser extensions
+- If the file is over 2 GB, a wired (ethernet) connection is recommended
+- Check if your organisation's network has upload size limits
+
+### I get an "unsupported format" error
+
+Convert the video to MP4 (H.264) using a free tool like [HandBrake](https://handbrake.fr). Set the preset to "Fast 1080p30" or "Fast 1080p60".
+
+### The video looks corrupted or green after upload
+
+This is usually a codec issue with H.265 or certain camera formats. Convert to H.264 MP4 before uploading.
+
+### My video is processing for a very long time
+
+Processing time depends on video length and server load. A 3-minute race at 1080p/60fps typically processes in 1–3 minutes. If a video has been processing for more than 15 minutes without progress, try refreshing the page. If it's still stuck, contact support.
+
+---
+
+## Annotation
+
+### My splits don't match the official times
+
+SwimAI measures from your video, not the official timing system. Differences of 0.1–0.5 seconds are normal due to:
+- Camera frame rate limitations (±0.016s at 60fps per marker)
+- Camera angle (not perfectly perpendicular to the wall)
+- Camera lag vs. touchpad timing
+
+SwimAI times are for coaching analysis, not official record-keeping.
+
+### I accidentally deleted a marker
+
+Use **Cmd + Z** (Mac) or **Ctrl + Z** (Windows) to undo. Up to 20 marker actions can be undone.
+
+### My splits table is showing unexpected segments
+
+Check your markers are in the right order and placed on the correct frames. Common issues:
+- A Turn marker placed before a Start marker
+- Two markers at nearly the same timestamp
+- A Custom marker placed between two standard markers, splitting a lap unexpectedly
+
+### I can't place a marker precisely — the video skips frames
+
+Check your internet connection — slow connections can cause the video buffer to skip. Try pausing for a moment to let the video fully buffer, then use the arrow keys to step frame by frame.
+
+---
+
+## Comparison
+
+### I can't find a video to compare with
+
+The comparison search only shows videos in your workspace. Make sure the second video has been uploaded and processed. Use the search bar and try different keywords.
+
+### The two videos aren't syncing correctly
+
+Syncing is based on the marker you select. Make sure both videos have a marker of the same type at the intended sync point. If one video has a Start marker and the other doesn't, the sync won't work.
+
+---
+
+## Video Trim & Export
+
+### My downloaded clip has no sound
+
+Clips are exported without audio by default to reduce file size. Audio export is available on the Coach and Club plans — enable it in the Trim panel before downloading.
+
+### The exported CSV is missing some splits
+
+The CSV includes all segments between markers. If a segment is missing, check that the corresponding markers exist and are in the correct order.
+
+### My shared link isn't working
+
+Shared links expire after 30 days. Generate a new link in **Settings → Shared Links** or directly from the Share button on the video.
+
+---
+
+## Account & Billing
+
+### How do I change my password?
+
+Go to **Settings → Account → Change Password**.
+
+### How do I cancel my subscription?
+
+Go to **Settings → Billing → Cancel Plan**. You'll keep access until the end of your current billing period.
+
+### I was charged but my account shows as expired
+
+This is usually a payment processing delay. Refresh the page. If the issue persists after 10 minutes, contact support at **support@swim-analysis.com**.
+
+---
+
+<Callout type="info">
+  **Still need help?** Email us at **support@swim-analysis.com** and include your account email and a description of the issue. Include a screenshot if you can.
+</Callout>

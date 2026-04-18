@@ -1,0 +1,136 @@
+---
+title: Calculations Explained
+description: How SwimAI calculates split times, reaction time, and underwater metrics.
+---
+
+import { Callout } from 'nextra/components'
+
+# Calculations Explained
+
+Every number SwimAI shows you is derived directly from your marker timestamps. Here's exactly how each metric is calculated.
+
+---
+
+## Timestamps
+
+Every marker stores a **timestamp** — the time of that frame in the video, measured from frame 0 in seconds to three decimal places (milliseconds).
+
+All split calculations are simply differences between timestamps:
+
+```
+Split = Marker B timestamp − Marker A timestamp
+```
+
+There is no AI inference or estimation involved — the numbers come entirely from where you placed your markers.
+
+---
+
+## Lap Splits
+
+A lap is defined as the time between a **Start** and the first **Turn**, or between any two consecutive **Turn** markers, or from the last Turn to the **Finish**.
+
+```
+Lap 1 = Turn 1 timestamp − Start timestamp
+Lap 2 = Turn 2 timestamp − Turn 1 timestamp
+...
+Final lap = Finish timestamp − Last Turn timestamp
+```
+
+For a 50m race there are no turns, so the only split is:
+
+```
+Total = Finish timestamp − Start timestamp
+```
+
+---
+
+## Total Time
+
+```
+Total time = Finish timestamp − Start timestamp
+```
+
+This is always the sum of all lap splits. If your splits don't add up to your total time, a marker is in the wrong place.
+
+---
+
+## Reaction Time
+
+Reaction time is only shown when a **Reaction** marker is present.
+
+```
+Reaction time = Start timestamp − Reaction timestamp
+```
+
+<Callout type="info">
+  FINA/World Aquatics defines a false start as a reaction time below 0.10 seconds. SwimAI highlights reaction times below 0.10s in red.
+</Callout>
+
+---
+
+## Turn Cycle Time
+
+Turn cycle is shown when a **Turn** marker is followed by a **Breakout** marker.
+
+```
+Turn cycle = Breakout timestamp − Turn timestamp
+```
+
+This measures the total time from wall touch to first stroke — encompassing the push-off, glide, underwater dolphin kicks, and breakout stroke.
+
+---
+
+## Underwater Time
+
+Underwater time is shown when a **15m** marker is present after a Start or Turn.
+
+```
+Underwater time = 15m timestamp − (Start or Turn) timestamp
+```
+
+A shorter underwater time at a given 15m mark means a faster underwater phase.
+
+---
+
+## Underwater Distance
+
+SwimAI does not calculate a variable underwater distance — the 15m marker is always placed at the 15m position by the coach. The **15m marker always represents 15 metres**.
+
+What varies is the **Underwater time** — how fast the swimmer covered that 15m. A coach placing the 15m marker at 12m by mistake will produce incorrect metrics.
+
+---
+
+## Stroke Rate (from Custom markers)
+
+SwimAI does not auto-detect strokes. If you place **Custom markers** on each stroke cycle, the splits table shows the time between each pair. To calculate stroke rate from this:
+
+```
+Stroke rate (cycles/min) = 60 ÷ (time between two consecutive stroke markers)
+```
+
+---
+
+## Frame Precision
+
+Timestamps are stored at the **frame level** — each marker is snapped to the nearest video frame. Precision depends on frame rate:
+
+| Frame rate | Precision |
+|---|---|
+| 60 fps | ±0.0167s (±16.7ms) |
+| 50 fps | ±0.020s (±20ms) |
+| 30 fps | ±0.0333s (±33.3ms) |
+| 25 fps | ±0.040s (±40ms) |
+
+For competitive analysis, **60fps footage is strongly recommended**.
+
+---
+
+## Why My Splits Don't Match the Scoreboard
+
+SwimAI measures from your video — it is not connected to the official timing system. Differences arise from:
+
+- **Camera latency** — the camera's internal timing vs. the official touch-pad clock
+- **Angle** — if the camera isn't perpendicular to the pool, the touch moment may be harder to identify precisely
+- **Frame rate** — at 30fps, a ±33ms error is possible per marker; across multiple markers this compounds
+
+SwimAI times are **analysis times for coaching purposes**, not official competition times.

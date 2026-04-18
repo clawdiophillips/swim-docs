@@ -1,0 +1,113 @@
+---
+title: Marker Types
+description: Reference guide for all SwimAI marker types.
+---
+
+# Marker Types Reference
+
+SwimAI has seven marker types. Each captures a specific event in a race and feeds into different parts of the splits calculation.
+
+---
+
+## Start
+
+| Property | Value |
+|---|---|
+| **Colour** | Blue |
+| **Keyboard shortcut** | `S` |
+| **Required for splits** | Yes — every annotation must have exactly one Start |
+
+**When to place it:** The exact frame when the swimmer's **feet leave the block** (or push off the wall for backstroke). For backstroke, this is the moment the feet release from the block footrest.
+
+Do not place Start at the starter's signal — that's what the Reaction marker is for.
+
+---
+
+## Finish
+
+| Property | Value |
+|---|---|
+| **Colour** | Blue |
+| **Keyboard shortcut** | `F` |
+| **Required for splits** | Yes — every annotation must have exactly one Finish |
+
+**When to place it:** The exact frame when the swimmer's **hand (palm or fingertips) touches the touchpad** at the finish wall. For IM and breaststroke, this must be a two-hand touch on the same frame; if unsure, use the frame the second hand touches.
+
+---
+
+## Turn
+
+| Property | Value |
+|---|---|
+| **Colour** | Orange |
+| **Keyboard shortcut** | `T` |
+| **Required for splits** | Yes — one per lap turn |
+
+**When to place it:** The exact frame of the **wall touch** at a turn. This is:
+- **Freestyle / backstroke flip turn** — the frame the **feet touch the wall**
+- **Breaststroke / butterfly turn** — the frame **both hands touch simultaneously**
+- **IM transitions** — use the rule for the stroke that *ends* at the turn
+
+One Turn marker per turn. For a 200m race (4 laps, 3 turns) you need exactly 3 Turn markers.
+
+---
+
+## Breakout
+
+| Property | Value |
+|---|---|
+| **Colour** | Green |
+| **Keyboard shortcut** | `B` |
+| **Required for splits** | No — but required for underwater metrics |
+
+**When to place it:** The frame when the **swimmer's head breaks the water surface** after a start or turn. More precisely, the first frame where the crown of the head is above the surface line.
+
+Adding a Breakout marker after each Turn enables the **Turn cycle time** metric (Turn → Breakout) in the splits table.
+
+---
+
+## 15m / Underwater
+
+| Property | Value |
+|---|---|
+| **Colour** | Purple |
+| **Keyboard shortcut** | `U` |
+| **Required for splits** | No — but required for underwater distance metrics |
+
+**When to place it:** The frame when the **swimmer's head passes the 15m mark** from the start or turn wall. Most pools have a 15m marker on the lane rope or pool floor — use this as your reference.
+
+Adding a 15m marker after Start and/or each Turn enables the **Underwater time** metric in the splits table.
+
+---
+
+## Reaction
+
+| Property | Value |
+|---|---|
+| **Colour** | Red |
+| **Keyboard shortcut** | `R` |
+| **Required for splits** | No — but required for reaction time |
+
+**When to place it:** The frame of the **starter's signal** — the moment the beep sounds or the gun fires. SwimAI will calculate Reaction Time as the time from this marker to the Start marker.
+
+<br />
+
+> **Tip:** For reaction time, your video must capture the starter's signal. If filming from the finish end, audio delay may make this imprecise — a camera at the start end with clear sight of the start system is ideal.
+
+---
+
+## Custom
+
+| Property | Value |
+|---|---|
+| **Colour** | Grey |
+| **Keyboard shortcut** | `M` |
+| **Required for splits** | No |
+
+**When to place it:** Any event that doesn't fit the categories above. Examples:
+- Stroke error or technique fault
+- Equipment malfunction (goggle slip)
+- DQ-related event
+- Mid-race coach observation
+
+Custom markers show up in the splits table as their own row with the name you give them. They do not feed into automatic split calculations unless placed between two standard markers.

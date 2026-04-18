@@ -1,0 +1,96 @@
+---
+title: Your First Annotation
+description: Place your first markers and see SwimAI calculate splits automatically.
+---
+
+import { Steps, Callout } from 'nextra/components'
+
+# Your First Annotation
+
+In SwimAI, annotations are markers you place on a video to capture key moments — race start, turns, breakouts, and finish. Once you've placed the right markers, SwimAI automatically calculates your split times.
+
+This guide walks you through annotating a simple 100m freestyle race.
+
+---
+
+## The Annotate Screen
+
+When you open a race video, you're in the **Annotate screen**. Here's the layout:
+
+```
+┌─────────────────────────────────────────────────────┐
+│  Video Player                    │  Marker Panel     │
+│  (large, centre)                 │  (right sidebar)  │
+│                                  │                   │
+│  [Play] [◄◄] [frames] [frames►] │  Marker list      │
+│  Timeline ──────────────────── ─┤  + Add Marker     │
+└─────────────────────────────────┴───────────────────┘
+         ▲ Splits Table appears below the player
+```
+
+- **Video player** — scrub or play your footage
+- **Marker panel** — lists all markers in time order
+- **Timeline** — shows markers as colour-coded pins; click to jump to any marker
+- **Splits table** — calculated automatically as you add markers
+
+---
+
+## Place Your First Markers
+
+<Steps>
+
+### Find the start
+
+Play the video and pause at the exact frame the swimmer leaves the blocks (or wall, for non-start laps). Use the **← →** arrow keys to move one frame at a time.
+
+### Add a Start marker
+
+Press **S** on your keyboard, or click **+ Add Marker → Start** in the marker panel. A blue pin appears on the timeline.
+
+### Find the first turn
+
+Scrub forward to the moment the swimmer touches the wall at the turn. Pause on the exact frame.
+
+### Add a Turn marker
+
+Press **T** on your keyboard, or click **+ Add Marker → Turn**. An orange pin appears.
+
+### Find the finish
+
+Scrub to the finish — the frame where the swimmer's hand touches the wall. Pause.
+
+### Add a Finish marker
+
+Press **F** on your keyboard, or click **+ Add Marker → Finish**. A green pin appears.
+
+### Review your splits
+
+The splits table now shows the time from Start → Turn and Turn → Finish automatically. For a 100m freestyle you'll see two splits.
+
+</Steps>
+
+<Callout type="tip">
+  **Frame-accuracy matters.** A single frame at 60fps is ~16ms. For competitive splits, always use the arrow keys to find the exact frame rather than clicking on the timeline.
+</Callout>
+
+---
+
+## Editing and Deleting Markers
+
+- **Move a marker** — click the marker in the panel and drag the blue handle on the timeline to the correct frame
+- **Rename a marker** — double-click the marker name in the panel to edit it
+- **Delete a marker** — click the marker in the panel and press **Delete**, or click the trash icon
+
+---
+
+## Save Your Annotations
+
+Annotations save automatically as you work. You'll see a **Saved** indicator in the top-right corner. There's no save button to click.
+
+---
+
+## What's Next?
+
+- Learn about all available marker types: [Marker Types →](/docs/reference/marker-types)
+- Add breakout and underwater markers: [Annotate Screen →](/docs/features/annotate)
+- Compare two swimmers side-by-side: [Comparison →](/docs/features/comparison)

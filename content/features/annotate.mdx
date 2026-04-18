@@ -1,0 +1,142 @@
+---
+title: Annotate Screen
+description: A full guide to the SwimAI annotation interface.
+---
+
+import { Callout, Tabs } from 'nextra/components'
+
+# Annotate Screen
+
+The Annotate screen is where you spend most of your time in SwimAI. It combines a video player, marker tools, and a live splits table in a single workspace.
+
+---
+
+## Layout Overview
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│ TOOLBAR:  [Athlete selector]  [Pool: 50m ▾]  [Share]  [Export]   │
+├──────────────────────────────────────────────────┬───────────────┤
+│                                                  │ MARKER PANEL  │
+│                VIDEO PLAYER                      │               │
+│                                                  │  ◉ Start      │
+│  [▶ Play]  00:04.12 / 02:18.44                  │  ◉ Turn 1     │
+│                                                  │  ◉ Breakout 1 │
+│  TIMELINE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   │  ◉ Turn 2     │
+│             ↑Start  ↑T1  ↑B1  ↑T2  ↑B2  ↑Fin   │  ◉ Breakout 2 │
+├──────────────────────────────────────────────────│  ◉ Finish     │
+│ SPLITS TABLE                                     │               │
+│  Lap 1: 00:27.43  |  Lap 2: 00:28.11           │  [+ Add]      │
+└──────────────────────────────────────────────────┴───────────────┘
+```
+
+---
+
+## Video Player Controls
+
+| Control | Action |
+|---|---|
+| **Space** | Play / Pause |
+| **← →** | Move one frame back / forward |
+| **Shift + ← →** | Move 10 frames back / forward |
+| **J / L** | Slow rewind / fast forward |
+| **K** | Pause |
+| **0–9** | Jump to 0%–90% of video duration |
+| Click on timeline | Jump to that position |
+
+### Playback Speed
+
+Use the speed selector next to the play button to slow the video to **0.25×, 0.5×,** or **0.75×**. Slow motion helps you find exact frame positions for marker placement.
+
+---
+
+## The Marker Panel
+
+The marker panel (right sidebar) lists every marker in chronological order. Each row shows:
+
+- **Marker type icon** (colour-coded)
+- **Marker name** — editable by double-clicking
+- **Timestamp** — the video time at that marker
+- **Delete button** (trash icon, visible on hover)
+
+Markers appear as colour-coded pins on the timeline below the player. Clicking a pin or a row in the panel jumps the player to that moment.
+
+---
+
+## Adding Markers
+
+<Tabs items={['Keyboard', 'Mouse']}>
+  <Tabs.Tab>
+  Use keyboard shortcuts for the fastest workflow:
+
+  | Key | Marker type |
+  |---|---|
+  | **S** | Start |
+  | **T** | Turn |
+  | **B** | Breakout |
+  | **F** | Finish |
+  | **R** | Reaction (false start / DQ event) |
+  | **U** | Underwater (15m mark) |
+  | **M** | Custom marker |
+
+  Pause on the exact frame, then press the shortcut. The marker is added at the current playhead position.
+  </Tabs.Tab>
+  <Tabs.Tab>
+  1. Pause the video on the exact frame
+  2. Click **+ Add** at the bottom of the marker panel
+  3. Choose the marker type from the dropdown
+  4. The marker is added at the current playhead position
+  </Tabs.Tab>
+</Tabs>
+
+<Callout type="tip">
+  Work through the race in chronological order: Start → Turn 1 → Breakout 1 → Turn 2 → ... → Finish. This keeps your marker list clean and avoids gaps in the splits table.
+</Callout>
+
+---
+
+## The Timeline
+
+The timeline strip below the player gives you a bird's-eye view of the entire race:
+
+- **Blue pins** — Start and Finish markers
+- **Orange pins** — Turn markers
+- **Green pins** — Breakout markers
+- **Purple pins** — Underwater (15m) markers
+- **Grey pins** — Custom markers
+
+Hover over a pin to see its label and timestamp. Click to jump the player to that frame.
+
+---
+
+## The Splits Table
+
+The splits table appears below the video and updates live as you add or move markers. It shows:
+
+- **Lap splits** — time from Start to each Turn, and between Turns
+- **Stroke rate** (if stroke markers are present)
+- **Underwater distance** (if 15m markers are present)
+- **Total time** — from Start to Finish
+
+See [Splits](/docs/features/splits) for a full explanation of how each value is calculated.
+
+---
+
+## Saving and Sharing
+
+Annotations **save automatically** — you'll see a "Saved" indicator in the toolbar.
+
+To share your annotation with an athlete or another coach:
+1. Click **Share** in the toolbar
+2. Copy the link or send directly via email
+3. Recipients can view (but not edit) the annotations in their browser
+
+---
+
+## Exporting
+
+Click **Export** in the toolbar to:
+
+- **Download splits as CSV** — opens in Excel, Numbers, or Google Sheets
+- **Download annotated clip** — a trimmed MP4 with markers burned in (uses the [Video Trim](/docs/features/trim) tool)
+- **Copy splits to clipboard** — paste directly into a message or document

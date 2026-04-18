@@ -1,0 +1,105 @@
+---
+title: Comparison
+description: Compare two swimmers side-by-side in SwimAI.
+---
+
+import { Steps, Callout } from 'nextra/components'
+
+# Comparison
+
+The Comparison feature lets you place two swimmers side-by-side and sync them to a common point — perfect for showing an athlete how their technique compares to a faster swimmer or their own previous best.
+
+---
+
+## When to Use Comparison
+
+- Showing a swimmer the difference between their turn and a faster swimmer's turn
+- Comparing an athlete's technique race-to-race over a season
+- Side-by-side analysis of two relay legs
+- Demonstrating what a faster breakout looks like in real terms
+
+---
+
+## Open a Comparison
+
+<Steps>
+
+### Open your first race
+
+Navigate to a race video on your dashboard and click **View** to open it.
+
+### Click Compare
+
+In the annotation toolbar, click the **Compare** button (two overlapping rectangles icon). A search panel opens on the right.
+
+### Choose a second video
+
+Search for a second race or swimmer from your library. You can filter by athlete name, date, or event.
+
+### Select the sync point
+
+Choose a marker to sync the two videos on — typically **Start** or **Turn 1**. Both videos will snap to the same relative position at that marker.
+
+### Play
+
+Click Play. Both videos play side-by-side, staying in sync. Use playback controls to scrub or slow down both simultaneously.
+
+</Steps>
+
+---
+
+## Sync Points
+
+The sync point determines what the two videos are aligned on. Common sync points:
+
+| Sync point | Good for |
+|---|---|
+| **Start** | Comparing full race from the block |
+| **Turn 1** | Isolating second lap and underwater off turns |
+| **Reaction** | Comparing start reaction times |
+| **Breakout 1** | Comparing the first stroke after the dive |
+
+<Callout type="tip">
+  For technique comparison (not race comparison), sync on **Turn** to focus specifically on the underwater phase. This removes variation in reaction time from the comparison.
+</Callout>
+
+---
+
+## Playback Controls in Comparison Mode
+
+Both videos share a single playback timeline. Controls work the same as the standard annotate screen:
+
+| Control | Action |
+|---|---|
+| **Space** | Play / Pause both |
+| **← →** | Step both videos one frame |
+| **Shift + ← →** | Step both videos 10 frames |
+| **Drag timeline** | Scrub both simultaneously |
+
+You cannot scrub the videos independently — they are always locked to the same offset from the sync point.
+
+---
+
+## Viewing Split Differences
+
+When both videos have markers annotated, a **Δ (delta) column** appears in the splits table beneath the comparison player. It shows the time difference for each split segment between the two swimmers.
+
+| Segment | Swimmer A | Swimmer B | Δ |
+|---|---|---|---|
+| Start → Turn 1 | 27.22s | 26.88s | -0.34s |
+| Turn 1 → Finish | 28.27s | 27.91s | -0.36s |
+| **Total** | **55.49s** | **54.79s** | **-0.70s** |
+
+Negative Δ means Swimmer B is faster in that segment.
+
+---
+
+## Sharing a Comparison
+
+Click **Share** while in comparison mode to generate a shareable link. Recipients see both videos synced at the same point — no account required to view.
+
+---
+
+## Exiting Comparison
+
+Click the **X** on the comparison panel, or press **Escape**, to return to the single-video annotate view.

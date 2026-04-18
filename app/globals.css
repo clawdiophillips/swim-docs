@@ -1,0 +1,16 @@
+:root {
+  --nextra-primary-hue: 210;
+  --nextra-primary-saturation: 90%;
+}
+
+/* SwimAI brand colours */
+:root {
+  --swim-blue: #0ea5e9;
+  --swim-dark: #0f172a;
+}
+
+/* Logo style */
+.nextra-logo {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}

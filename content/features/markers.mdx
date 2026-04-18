@@ -1,0 +1,92 @@
+---
+title: Markers
+description: How to add, edit, and organise markers in SwimAI.
+---
+
+import { Callout } from 'nextra/components'
+
+# Markers
+
+Markers are time-stamped pins you place on a video frame to capture a specific moment in a race or training swim. SwimAI uses markers to calculate splits, measure underwater distance, and identify technical events.
+
+---
+
+## Marker Types
+
+SwimAI has seven built-in marker types, each with a distinct colour and icon:
+
+| Marker | Colour | Keyboard shortcut | When to use |
+|---|---|---|---|
+| **Start** | Blue | `S` | The instant the swimmer's feet leave the block (or the push-off for backstroke) |
+| **Turn** | Orange | `T` | The instant the swimmer's hand (or feet) touches the wall at a turn |
+| **Breakout** | Green | `B` | The first stroke cycle after a turn or start, when the head breaks the surface |
+| **Finish** | Blue | `F` | The instant the swimmer's hand touches the finish wall |
+| **15m / Underwater** | Purple | `U` | The 15m mark — used to measure underwater distance off start or turns |
+| **Reaction** | Red | `R` | Reaction time events (starter's signal to start of movement) |
+| **Custom** | Grey | `M` | Any other event you want to annotate (e.g. stroke error, equipment failure) |
+
+For a deeper reference, see [Marker Types →](/docs/reference/marker-types)
+
+---
+
+## Adding a Marker
+
+1. Open a race in the annotate screen
+2. Pause the video on the exact frame you want to mark
+3. Press the keyboard shortcut (e.g. `T` for a turn), or click **+ Add** in the marker panel and choose the type
+
+The marker is placed at the current playhead position and immediately appears in the panel and on the timeline.
+
+<Callout type="tip">
+  Use the **← →** arrow keys to step one frame at a time before placing a marker. At 60fps each frame is ~16ms, so frame accuracy matters for competitive splits.
+</Callout>
+
+---
+
+## Editing a Marker
+
+### Move a marker to a different frame
+
+1. In the marker panel, click the marker you want to move
+2. Scrub the video to the correct frame
+3. Click **Update Time** (the clock icon next to the marker) or press `Enter`
+
+Alternatively, drag the pin on the timeline left or right.
+
+### Rename a marker
+
+Double-click the marker's name in the panel to make it editable. Type the new name and press `Enter`.
+
+This is useful for multi-athlete videos — for example, "Turn 1 – Athlete A" and "Turn 1 – Athlete B".
+
+---
+
+## Deleting a Marker
+
+- Hover over the marker row in the panel and click the **trash icon**, or
+- Click the marker to select it and press the **Delete** key
+
+<Callout type="warning">
+  Deleting a marker cannot be undone. If you delete a Turn marker, the splits that depend on it will recalculate automatically.
+</Callout>
+
+---
+
+## Ordering and Grouping
+
+Markers are always displayed in **chronological order** — sorted by timestamp, not by the order you created them.
+
+If you have multiple swimmers in one video, use Custom markers with descriptive names to distinguish events. For a cleaner workflow with multi-swimmer footage, consider the [Comparison](/docs/features/comparison) feature instead.
+
+---
+
+## Marker Notes
+
+You can attach a text note to any marker:
+
+1. Click the marker in the panel to expand it
+2. Click the **note** field (pencil icon)
+3. Type your observation — e.g. "Late touch, slightly crooked"
+4. Press `Enter` to save
+
+Notes appear in the exported CSV and in the shareable annotation link.

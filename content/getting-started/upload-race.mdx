@@ -1,0 +1,91 @@
+---
+title: Upload a Race
+description: How to add race footage to SwimAI and configure the session details.
+---
+
+import { Steps, Callout, FileTree } from 'nextra/components'
+
+# Upload a Race
+
+SwimAI accepts video files from most cameras and phones. Here's how to get your footage into the platform.
+
+---
+
+## Supported Formats
+
+| Format | Extensions | Notes |
+|---|---|---|
+| MP4 (H.264) | `.mp4` | Recommended — fastest processing |
+| MP4 (H.265 / HEVC) | `.mp4` | Supported; slightly slower to process |
+| MOV | `.mov` | Common from iPhones and GoPros |
+| MTS / M2TS | `.mts`, `.m2ts` | Direct camera files; supported |
+| AVI | `.avi` | Supported |
+
+**Maximum file size:** 10 GB per upload.
+
+<Callout type="info">
+  Filming at **1080p, 60fps** gives the best accuracy for marker placement and split calculations. 4K is supported but will process more slowly.
+</Callout>
+
+---
+
+## Upload Your Video
+
+<Steps>
+
+### Open the Dashboard
+
+Click **New Race** in the top-right corner of your dashboard.
+
+### Drag or select your file
+
+Drag your video file into the upload area, or click **Browse** to select it from your computer.
+
+### Fill in race details
+
+| Field | Description |
+|---|---|
+| **Title** | e.g. "State Championships 100 Free — Heat 3" |
+| **Date** | Date the race was swum |
+| **Pool length** | 25m, 50m, or 25 yards |
+| **Event** | e.g. 100m Freestyle |
+| **Athletes** | Tag the swimmers in this video (optional but recommended) |
+
+### Click Upload
+
+SwimAI will upload and process the video. Processing time depends on file size and length — a 3-minute race video typically takes 1–2 minutes to process.
+
+### Open the video
+
+Once processing is complete, you'll see a **View** button next to the race in your dashboard. Click it to open the annotation screen.
+
+</Steps>
+
+---
+
+## Organising Your Library
+
+All uploaded videos live in your **Library** (the folder icon in the left sidebar). You can:
+
+- Create **folders** to group videos by meet, season, or athlete
+- Use **tags** to filter by event type or training phase
+- **Archive** races you no longer need in your main view
+
+---
+
+## Troubleshooting Uploads
+
+**Upload gets stuck at 0%**
+Check your internet connection. Large files need a stable connection — wired is best for files over 2 GB.
+
+**"Unsupported format" error**
+Convert your video to MP4 using a free tool like [HandBrake](https://handbrake.fr) before uploading.
+
+**Video looks very dark or corrupted after upload**
+This can happen with some MTS files. Re-export from your camera software as MP4.
+
+---
+
+## Next Step
+
+Now let's annotate your first race: [Your First Annotation →](/docs/getting-started/first-annotation)

@@ -1,0 +1,84 @@
+---
+title: Splits
+description: How SwimAI calculates and displays split times from your markers.
+---
+
+import { Callout } from 'nextra/components'
+
+# Splits
+
+Once you've placed markers on a race, SwimAI calculates split times automatically. The splits table appears below the video player and updates in real time as you add or adjust markers.
+
+---
+
+## The Splits Table
+
+The splits table shows a row for each **segment** of the race. A segment is the time between two consecutive markers.
+
+Example for a 100m freestyle (2 laps):
+
+| Segment | Start time | End time | Split |
+|---|---|---|---|
+| Reaction | 00:00.00 | 00:00.62 | 0.62s |
+| Start → Turn 1 | 00:00.62 | 00:27.84 | 27.22s |
+| Turn 1 → Finish | 00:27.84 | 00:56.11 | 28.27s |
+| **Total** | | | **55.49s** |
+
+---
+
+## Which Markers Drive Splits?
+
+| Marker pair | What it measures |
+|---|---|
+| Start → next Turn or Finish | First lap time |
+| Turn → next Turn or Finish | Subsequent lap times |
+| Reaction → Start | Reaction time |
+| Turn → Breakout | Turn cycle time (wall to surface) |
+| Start or Turn → 15m marker | Underwater distance / time |
+
+---
+
+## Reaction Time
+
+If you place a **Reaction** marker (at the starter's signal) before the **Start** marker (feet leave the block), SwimAI calculates and displays reaction time separately from the first lap.
+
+<Callout type="info">
+  Reaction time is only as accurate as the video frame rate allows. At 60fps, precision is ±0.017s. At 30fps, precision is ±0.033s.
+</Callout>
+
+---
+
+## Underwater Metrics
+
+If you add a **15m** (Underwater) marker after a turn or start, the splits table gains extra columns:
+
+- **Underwater time** — from Start/Turn to the 15m marker
+- **Underwater distance** — always 15m (the marker location), but the time tells you how fast
+- **Turn cycle** — from Turn to Breakout (time spent underwater and in the first stroke)
+
+---
+
+## Stroke Count and Stroke Rate
+
+SwimAI does not count strokes automatically. However, you can place **Custom markers** on each stroke to count manually. The splits table will show a custom row for each custom segment.
+
+---
+
+## Exporting Splits
+
+Click **Export → Download splits as CSV** to get a spreadsheet containing:
+- All segment names and times
+- Reaction time (if recorded)
+- Underwater metrics (if 15m markers present)
+- Date, athlete, event, and pool length
+
+The CSV opens directly in Excel, Numbers, or Google Sheets.
+
+---
+
+## Accuracy Tips
+
+- **Use 60fps footage** when possible — each frame is 16ms vs. 33ms at 30fps
+- **Step frame-by-frame** using the arrow keys when placing markers
+- For turn touches in long-course races, zoom in using your browser's zoom (Cmd + on Mac) to see the touch moment more clearly
+- Backstroke turns are tricky — the touch is often below the surface; look for the underwater camera angle if available
