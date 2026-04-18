@@ -1,0 +1,139 @@
+---
+title: Filming for SwimAI
+description: How to position your camera and set up your phone or camera to get the best results in SwimAI.
+---
+
+import { Callout } from 'nextra/components'
+
+# Filming for SwimAI
+
+The quality of your annotation comes down to the quality of your footage. Good positioning and settings cost nothing — they just need a few minutes of preparation before the session or meet starts.
+
+---
+
+## The Golden Rules
+
+1. **End-on beats side-on** for races — you see the touch wall clearly
+2. **Level with the water** — avoids parallax error on wall touches
+3. **60fps beats 30fps** — doubles your split precision
+4. **Stable beats handheld** — a railing, tripod, or flat surface is always better
+5. **5 seconds before the start** — always start recording before the starter's signal
+
+---
+
+## Camera Position
+
+### Race footage (end-on)
+
+Film from the **finish end of the pool**, looking down the lane toward the start. This gives you:
+- Clear sight of the start (reaction time and feet-off-block)
+- Clear sight of every turn touch
+- Clear sight of the finish touch
+
+Position the camera **at water level or just above** — aim for the top of the lane rope or pool surround. Filming from the stands looking down creates a parallax problem: the far wall looks closer than it is, and the touch moment is harder to judge accurately.
+
+```
+                    ← camera here
+┌──────────────────────────────────┐
+│  ⊲ lane ⊳                       │ ← water level
+│  ⊲ lane ⊳  ←────── pool ──────  │
+│  ⊲ lane ⊳                       │
+└──────────────────────────────────┘
+                                   ▲
+                            finish wall (camera end)
+```
+
+### Training footage (side-on or underwater)
+
+For technique analysis, a **side-on angle** lets you see:
+- Stroke cycle mechanics
+- Body position and rotation
+- Kick pattern and depth
+
+An **underwater angle** (through the observation window, or a GoPro on a pole) shows:
+- Underwater dolphin kicks
+- Breakout position
+- Turn mechanics clearly
+
+<Callout type="tip">
+  For the most complete analysis, film the same swim from two angles if you have multiple cameras: end-on for splits and touch accuracy, side-on for technique.
+</Callout>
+
+---
+
+## Camera Settings
+
+### Frame rate
+
+| Setting | Precision per marker | Best for |
+|---|---|---|
+| **60fps** | ±16ms | Competitive analysis, all races |
+| **50fps** | ±20ms | Acceptable for training |
+| **30fps** | ±33ms | Minimum usable; avoid for meets |
+| **25fps** | ±40ms | Avoid |
+
+On most phones: **Settings → Camera → Record Video → 1080p at 60fps**
+
+On a dedicated camera: set the frame rate in the video menu. If 60fps isn't available at 1080p, try 720p at 60fps — resolution matters less than frame rate for split accuracy.
+
+### Resolution
+
+1080p is the recommended minimum. 4K is supported but creates larger files and slower upload times without meaningful benefit for split analysis. For underwater cameras on a pole, 1080p is usually the best option at higher frame rates.
+
+### Exposure
+
+- **Outdoor pools in direct sun:** use your phone's HDR mode if available; the lane markings can wash out otherwise
+- **Indoor pools:** most indoor lighting is fine; avoid "Auto" if the camera keeps hunting between exposures
+- **Underwater:** if using an underwater camera, set a fixed white balance for pool lighting
+
+---
+
+## Phone-Specific Tips
+
+### iPhone
+
+1. Open **Settings → Camera → Record Video** and select **1080p at 60 fps**
+2. Use the **back camera**, not the front — better optical quality and stabilisation
+3. Lock exposure before recording: open Camera, tap-and-hold on the water to lock **AE/AF**
+4. Use a **phone clip** on a railing, or a small **GorillaPod** — handheld video is hard to annotate
+
+### Android
+
+Settings vary by manufacturer, but look for:
+- **Resolution** → 1080p (Full HD)
+- **Frame rate** → 60fps (sometimes labelled "Smooth" or "HFR")
+- **Stabilisation** → on for handheld; off or optical-only if on a tripod
+
+### Storage
+
+A 3-minute race at 1080p/60fps is roughly **500 MB–1 GB** depending on your phone. Before a meet:
+- Check free storage — aim for at least **20 GB free** for a full-day meet
+- Or bring a lightning/USB-C flash drive to offload between sessions
+
+---
+
+## What to Avoid
+
+| Problem | Why it matters | Fix |
+|---|---|---|
+| Filming from the stands at a steep angle | Touch moments are obscured by the pool edge | Move to poolside, water level |
+| Handheld camera | Drift makes scrubbing to exact frames harder | Use a railing or tripod |
+| Starting recording at the starting signal | You miss the reaction time and the block position | Start 5 seconds early |
+| Zooming in heavily on a phone | Digital zoom reduces quality and makes it harder to see the full lane | Stay wide; zoom in post by scrubbing frame-by-frame in SwimAI |
+| Filming through a window without cleaning it | Reflections and smears ruin footage | Wipe the window with a dry cloth |
+
+---
+
+## Checklist Before Each Session
+
+- [ ] Frame rate set to 60fps
+- [ ] At least 10 GB storage free
+- [ ] Camera mounted or resting stably
+- [ ] Camera at water level (end-on filming)
+- [ ] Recording started 5 seconds before the start signal
+
+---
+
+## Next Step
+
+Ready to upload? [Upload a Race →](/docs/getting-started/upload-race)
