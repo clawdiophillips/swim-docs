@@ -4,8 +4,8 @@ import { getPageMap } from 'nextra/page-map'
 const navbar = (
   <Navbar
     logo={
-      <span style={{ fontWeight: 700, fontSize: '1.1rem', letterSpacing: '-0.02em' }}>
-        SwimAI Docs
+      <span style={{ fontWeight: 700, fontSize: '1.1rem', letterSpacing: '-0.02em', fontFamily: "'Space Grotesk', sans-serif" }}>
+        Swimlab Docs
       </span>
     }
     projectLink="https://swim-analysis.com"
@@ -14,7 +14,7 @@ const navbar = (
 
 const footer = (
   <Footer>
-    <span>© {new Date().getFullYear()} SwimAI. All rights reserved.</span>
+    <span style={{ fontFamily: "'Inter Tight', sans-serif" }}>© {new Date().getFullYear()} Swimlab. All rights reserved.</span>
   </Footer>
 )
 
